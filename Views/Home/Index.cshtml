@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Image Cropper";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css" />
+    <style>
+        #loading_progress_background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: black;
+            opacity: 70%;
+            z-index: 1000000;
+        }
+
+        #percent_text {
+            font-size: x-large;
+        }
+    </style>
+}
+
+@section Scripts
+{
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="js/jq-ajax-progress.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
+    <script src="js/croppie_form.js"></script>
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="card" style="margin-top:10px;">
+    <div class="card-header">Cropper in ASP.NET Core</div>
+    <div class="card-body">
+
+        <div class="row align-items-start">
+            <div class="col">
+                <div class="vstack gap-3">
+                    <div class="vstack">
+                        <label for="danbooru_link">Load an image from danbooru post</label>
+                        <div class="input-group">
+                            <button class="btn btn-outline-secondary" type="button" id="danbooru_load">Load</button>
+                            <input type="text" class="form-control" placeholder="Danboory post link" id="danbooru_link">
+                        </div>
+                    </div>
+                    <div class="vstack">
+                        <label for="select_file">Or upload an image from your device</label>
+                        <input type="file" id="select_file" class="form-control" value="Choose Image" accept="image/*">
+                    </div>
+
+                    <div class="vstack">
+                        <label for="tags_input">Enter tags for the image:</label>
+                        <textarea class="form-control" id="tags_input" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <button id="btnupload" style="margin-top: 10px;" name="btnupload" class="btn btn-success">Crop</button>
+            </div>
+
+            <div class="col">
+                <div id="main-cropper" style="position: relative;">
+                    <div id="loading_progress_background" class="d-flex text-center justify-content-center align-items-center invisible">
+                        <span id="percent_text" class="font-weight-bold text-white" style="font-size: x-large"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+</script>
