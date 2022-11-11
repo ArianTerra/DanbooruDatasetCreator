@@ -5,6 +5,7 @@
 @section Styles
 {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <style>
         #loading_progress_background {
             position: absolute;
@@ -66,7 +67,15 @@
                     <div id="loading_progress_background" class="d-flex text-center justify-content-center align-items-center invisible">
                         <span id="percent_text" class="font-weight-bold text-white" style="font-size: x-large"></span>
                     </div>
+
                 </div>
+                <div>
+                    <button class="btn btn-primary bi bi-arrow-counterclockwise" id="rotate_left"> Rotate left</button>
+                    <button class="btn btn-primary bi bi-arrow-clockwise" id="rotate_right"> Rotate right</button>
+                </div>
+
+                @* <button class="btn btn-primary" id="mirror_h">Mirror horisontally</button> *@
+                @* <button class="btn btn-primary" id="mirror_v">Mirror vertically</button> *@
             </div>
         </div>
     </div>

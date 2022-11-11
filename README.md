@@ -16,7 +16,8 @@ Why ASP .NET? Because I'm bad at Python and I developed this project for myself.
 - [x] Tag loading from danbooru post
 - [ ] Default image (there's a cat picture for now)
 - [ ] Checkboxes for removing image author from tag field and meta tags like 'absurdres'
-- [ ] Rotating and mirroring image
+- [x] Rotating image
+- [ ] Mirroring image
 - [ ] Setting custom crop size
 - [ ] Better manual tag input
 - [ ] Download all files in zip

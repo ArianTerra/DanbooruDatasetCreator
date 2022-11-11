@@ -1,16 +1,23 @@
 ﻿const SITE_REGEX = /https:\/\/(danbooru|safebooru)\.donmai\.us\/posts\/\d+/;
+
+//variables
 var filename = "1200px-Cat03.jpg"
 
-//initialize Croppie
-var basic = $('#main-cropper').croppie
-({
+var orientation_v = 1
+var options = {
     viewport: { width: 300, height: 300 },
     boundary: { width: 400, height: 400 },
     enableZoom: true,
     zoom: 0,
+    enableOrientation: true,
+    orientation: 1,
     url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
     format: 'jpeg'|'png'|'webp'
-});
+};
+
+
+//initialize Croppie
+var basic = $('#main-cropper').croppie(options);
 
 // Change Event to Read file content from File input
 $('#select_file').on('change', function () {
@@ -117,3 +124,20 @@ function draw_progress(file_url) {
         }
     )
 }
+
+//rotate image
+$('#rotate_left').on('click', function() {
+    basic.croppie('rotate', 90);
+});
+$('#rotate_right').on('click', function() {
+    basic.croppie('rotate', -90);
+});
+
+//mirror image
+// $('#mirror_h').on('click', function() {
+//     orientation_v = orientation_v === 1 ? 2 : 1
+//
+//     options.orientation = orientation_v
+//
+//     basic.croppie('bind', options);
+// });
